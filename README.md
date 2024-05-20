@@ -40,7 +40,7 @@ IoT 개발자 미니프로젝트
         - 모니터링 앱
     3. DB설계
     4. RPi 세팅(Network)
-    5. RPi GPIO, IoT 디바이스 연결(카메라, HDT센서, RGB LED, ...)
+    5. RPi GPIO, IoT 디바이스 연결(카메라, DHT 센서, RGB LED, ...)
     6. RPi 데이터 전송 파이썬 프로그래밍
     7. PC(Server) 데이터 수신 C# 프로그래밍
     8. 모니터링 앱 개발(수신 및 송신)
@@ -65,3 +65,22 @@ IoT 개발자 미니프로젝트
 
 - 스마트홈 연동 클래스 미니프로젝트
     - RPi 셋팅... 진행
+
+## 4일차
+- 라즈베리파이 IoT장비 설치
+    [x] 라즈베리파이 카메라
+    - 테스트 방법
+        1. 카메라센서 연결()
+        2. 실행창(명령프롬프터)
+        3. sudo libcamera-hello -t 0
+    [x] GPIO HAT
+    [x] 브레드보드와 연결
+    [] DHT11 센서
+    [x] RGB LED 모듈
+        - V -> 5V 연결 
+        - R -> GPIO4
+        - B -> GPI05
+        - G -> GPIO6 연결
+- VS Code 한글설치: Korean
+- VS code Python 설치
+    - 폴더추가
