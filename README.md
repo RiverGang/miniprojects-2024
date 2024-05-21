@@ -75,7 +75,6 @@ IoT 개발자 미니프로젝트
         3. sudo libcamera-hello -t 0
     [x] GPIO HAT
     [x] 브레드보드와 연결
-    [] DHT11 센서
     [x] RGB LED 모듈
         - V -> 5V 연결 
         - R -> GPIO4
@@ -83,4 +82,28 @@ IoT 개발자 미니프로젝트
         - G -> GPIO6 연결
 - VS Code 한글설치: Korean
 - VS code Python 설치
-    - 폴더추가
+    - Python -> Python-Bank 폴더 추가
+
+## 5일차
+- 라즈베리파이 IoT장비 설치
+    [x] DHT11 센서
+        - GND(-) -> GND 8개중 아무 곳이나 연결
+        - VCC(+) -> 5V 연결
+        - S(OUT) -> GPIO18 연결
+        
+- 미니프로젝트
+    - 팀별 구매목록 작성
+    - 프로젝트 결정사항 공유
+    - 발표자료 준비
+    
+- 마우스 감도 설정
+    - sudo nano /boot/firmware/cmdline.txt
+    - 맨 뒤에 usbhid.mousepoll=0 추가
+    - 저장한 뒤, 라즈베리파이 리부팅(sudo reboot)
+
+- wifi connection 문제해결
+    - sudo /etc/rc.local
+        - exit 0 바로 위
+        - sudo iw reg set KR
+        - sudo iwconfig wlan0 power off
+        - 위의 두문장 추가
