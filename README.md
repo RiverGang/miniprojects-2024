@@ -116,3 +116,44 @@ IoT 개발자 미니프로젝트
     - 온습도 센서, RGB LED
     - RPi <--> Windows 통신(MQTT)
     - WPF 모니터링 앱
+
+- IoT 기기간 통신방법
+    - ModBus: 시리얼통신으로 데이터 전송(옛날방식)
+    - OPC UA: Modbus 단점 개선방식 (매우 복잡함)
+    - **MQTT**: 가장 편리! AWS IoT, Azure IoT 클라우드 산업계 표준으로 사용
+
+    - MQTT 통신
+        [x] Mosquitto Broker 설치
+            - mosquitto.conf : listener 1883 0.0.0.0. allow_anonymous true
+            - 방화벽 인바운드 열기        
+        [] RPi: paho-mqtt 패키지 설치, 송신(Publisher)
+            ```
+            sudo pip install paho-mqtt
+            ```
+            
+        [] Win: MQTT.NET Nuget패키치 설치, 수신(Subscriber)
+
+    - MQTT Broker 설치 및 통신
+        - mosquitto(https://mosquitto.org/download/)
+        
+        1. Notepad++ (관리자권한으로 실행) - 파일열기 - mosquitto 폴더 - mosquitto.conf 파일
+            - "# listener port-number [ip address/host name/unix socket path]" 아래 줄에
+            - #을 지우고 listener 뒤 1883 0.0.0.0 추가
+
+            - allow_anonymous false를 allow_anonymous true로 변경 (모두에게 접근허용, 회사에서는 false로 설정하고 아이디/패스워드 지정)
+
+        2. 윈도우 검색창 - 서비스 - Mosquitto Broker - 시작유형 -> 자동으로 설정 - 서비스 상태 시작 클릭
+
+        3. 윈도우 검색창 - 고급 보안이 포함된 Windows Defender 방화벽
+            - 인바운드 규칙 - 새 규칙
+            - 만드려는 규칙 종류 -> 포트 선택
+            - TCP 선택, 특정 로컬 포트 -> 1883 입력
+            - 연결 허용
+            - 이름(MQTT 포트 오픈) 및 설명 작성
+
+    - MQTT 통신 여부확인 프로그램 설치
+        - MQTT-Explorer(https://mqtt-explorer.com/)
+        
+        - Connections (새로운 연결)
+            - Name: 라즈베리파이 연결된 와이파이 이름
+            - Host: 현재 윈도우의 IPv4 주소
