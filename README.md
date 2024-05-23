@@ -107,3 +107,12 @@ IoT 개발자 미니프로젝트
         - sudo iw reg set KR
         - sudo iwconfig wlan0 power off
         - 위의 두문장 추가
+
+## 6일차
+- 네트워크 연결
+    - 개인공유기, PC, 라즈베리파이
+
+- 스마트홈 연동 클래스 미니프로젝트
+    - 온습도 센서, RGB LED
+    - RPi <--> Windows 통신(MQTT)
+    - WPF 모니터링 앱
