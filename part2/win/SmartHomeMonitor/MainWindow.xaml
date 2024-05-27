@@ -8,20 +8,17 @@
     xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:local="clr-namespace:SmartHomeMonitoringApp"
     mc:Ignorable="d"
-    Title="SmartHome Monitoring System" Height="450" Width="800" 
+    Title="SmartHome Monitoring System" Height="670" Width="1060" 
     MinHeight="450" MinWidth="670"
     Loaded="MetroWindow_Loaded" Closing="MetroWindow_Closing">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconSimpleIcons Kind="HomeAssistant" Width="24"
-                                           Margin="5,7,0,0" Foreground="White" />
+                                           Margin="5,7,0,0" Foreground="White"/>
         </DataTemplate>
     </mah:MetroWindow.IconTemplate>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="401*"/>
-            <ColumnDefinition Width="399*"/>
-        </Grid.ColumnDefinitions>
+       
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <!-- 내부에 컨트롤의 높이 따라감 -->
@@ -30,7 +27,7 @@
         </Grid.RowDefinitions>
 
         <!-- 메뉴바/툴바 영역 -->
-        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,349" Grid.RowSpan="2">
+        <StackPanel Grid.Row="0">
             <Menu IsMainMenu="True" Style="{StaticResource MahApps.Styles.Menu}">
                 <MenuItem Header="파일">
                     <MenuItem.Icon>
@@ -69,6 +66,11 @@
                             <iconPacks:PackIconMaterial Kind="GaugeLow"/>
                         </MenuItem.Icon>
                     </MenuItem>
+                    <MenuItem x:Name="MnuVisualizationMon" Header="시각화 모니터링" Click="MnuVisualizationMon_Click">
+                        <MenuItem.Icon>
+                            <iconPacks:PackIconMaterial Kind="ChartMultiline"/>
+                        </MenuItem.Icon>
+                    </MenuItem>
                 </MenuItem>
                     
                     
@@ -101,12 +103,12 @@
             </ToolBarTray>
         </StackPanel>
 
-        <Grid Grid.Row="1" Grid.ColumnSpan="2">
+        <Grid Grid.Row="1">
             <!-- UserControl embed 가능 -->
             <ContentControl x:Name="ActiveItem" Background="Gainsboro" />
         </Grid>
 
-        <StatusBar Grid.Row="1" Grid.ColumnSpan="2" Margin="0,349,0,0" Grid.RowSpan="2">
+        <StatusBar Grid.Row="2">
             <StatusBarItem>SmartHome Solution</StatusBarItem>
             <Separator Style="{StaticResource MahApps.Styles.Separator.StatusBar}" />
             <StatusBarItem>선택화면 :</StatusBarItem>

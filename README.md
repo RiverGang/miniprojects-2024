@@ -68,14 +68,14 @@ IoT 개발자 미니프로젝트
 
 ## 4일차
 - 라즈베리파이 IoT장비 설치
-    [x] 라즈베리파이 카메라
+    - [x] 라즈베리파이 카메라
     - 테스트 방법
         1. 카메라센서 연결()
         2. 실행창(명령프롬프터)
         3. sudo libcamera-hello -t 0
-    [x] GPIO HAT
-    [x] 브레드보드와 연결
-    [x] RGB LED 모듈
+    - [x] GPIO HAT
+    - [x] 브레드보드와 연결
+    - [x] RGB LED 모듈
         - V -> 5V 연결 
         - R -> GPIO4
         - B -> GPI05
@@ -86,7 +86,7 @@ IoT 개발자 미니프로젝트
 
 ## 5일차
 - 라즈베리파이 IoT장비 설치
-    [x] DHT11 센서
+    - [x] DHT11 센서
         - GND(-) -> GND 8개중 아무 곳이나 연결
         - VCC(+) -> 5V 연결
         - S(OUT) -> GPIO18 연결
@@ -108,7 +108,7 @@ IoT 개발자 미니프로젝트
         - sudo iwconfig wlan0 power off
         - 위의 두문장 추가
 
-## 6일차
+## 6,7일차
 - 네트워크 연결
     - 개인공유기, PC, 라즈베리파이
 
@@ -123,15 +123,17 @@ IoT 개발자 미니프로젝트
     - **MQTT**: 가장 편리! AWS IoT, Azure IoT 클라우드 산업계 표준으로 사용
 
     - MQTT 통신
-        [x] Mosquitto Broker 설치
+        - [x] Mosquitto Broker 설치
             - mosquitto.conf : listener 1883 0.0.0.0. allow_anonymous true
             - 방화벽 인바운드 열기        
-        [] RPi: paho-mqtt 패키지 설치, 송신(Publisher)
+        - [x] RPi: paho-mqtt 패키지 설치, 송신(Publisher)
             ```
             sudo pip install paho-mqtt
             ```
             
-        [] Win: MQTT.NET Nuget패키치 설치, 수신(Subscriber)
+        - [] Win/C#: M2MQTT, MQTT.NET Nuget패키치 설치, 수신(Subscriber)
+            - M2Mqtt: 가볍게 사용 가능. 업데이트 안됨
+            - MQTTNet: MS에서 개발, 무거움. 최신까지 업데이트 잘됨
 
     - MQTT Broker 설치 및 통신
         - mosquitto(https://mosquitto.org/download/)
@@ -158,4 +160,20 @@ IoT 개발자 미니프로젝트
             - Name: 라즈베리파이 연결된 와이파이 이름
             - Host: 현재 윈도우의 IPv4 주소
 
-## 7일차
+## 9일차
+- 스마트홈 연동 클래스 미니프로젝트
+    - [x] WPF 수신 MQTT데이터 DB 저장
+    - [x] MQTT데이터 실시간 모니터링
+        - [x]온도
+        - [ ]습도
+
+- NuGet 서버 불안정시 방법
+    - NuGet Gallery에서 패키지 직접 다운로드 (https://www.nuget.org/)
+        - [도구] - [옵션] - [NuGet 패키지 관리자] - [패키지 소스]
+        - 다운로드 받은 패키지파일 저장한 폴더 [...]에서 업데이트
+        - NuGet패키지 관리자 패키지 소스 경로 변경 후 다운로드
+
+## 10일차
+- 스마트홈 연동 클래스 미니프로젝트
+    - [] MQTT로 RPi 제어(LED 제어)
+    - [] WPF MQTT데이터 히스토리 확인 
