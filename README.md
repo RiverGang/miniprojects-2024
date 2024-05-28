@@ -175,5 +175,17 @@ IoT 개발자 미니프로젝트
 
 ## 10일차
 - 스마트홈 연동 클래스 미니프로젝트
-    - [] MQTT로 RPi 제어(LED 제어)
-    - [] WPF MQTT데이터 히스토리 확인 
+    - [x] MQTT로 RPi 제어(LED 제어)
+    - [x] WPF MQTT데이터 히스토리 확인
+        - LiveChart2는 차후에 다시 시도, 현재는 OxyPlot 차트 이용
+
+    - 실행결과
+
+        ![스마트홈1](https://raw.githubusercontent.com/RiverGang/miniprojects-2024/main/images/mp002.png)
+        
+        ![스마트홈2](https://raw.githubusercontent.com/RiverGang/miniprojects-2024/main/images/mp003.png)
+        
+        ![스마트홈3](https://raw.githubusercontent.com/RiverGang/miniprojects-2024/main/images/mp004.png)
+
+
+- 조별 미니프로젝트 발표
